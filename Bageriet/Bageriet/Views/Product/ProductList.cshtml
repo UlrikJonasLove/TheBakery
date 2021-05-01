@@ -1,0 +1,11 @@
+﻿@model ProductListViewModel
+@{
+    ViewData["Title"] = "Produkter";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Produkter</h2>
+    @foreach (var product in Model.Products)
+    {
+        <partial name="_ProductCard" model="product"/>
+    }
