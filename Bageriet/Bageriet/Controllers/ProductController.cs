@@ -30,7 +30,7 @@ namespace Bageriet.Controllers
             int id = ProductId;
             if (ModelState.IsValid)
             {
-                _appDbContext.Products.Find(ProductId).Comment += comment + @User.Identity.Name;
+                _appDbContext.Products.Find(ProductId).Comment += comment + " || " + @User.Identity.Name;
                 _appDbContext.Products.Find(ProductId).Ratings += ratings;
                 _appDbContext.Products.Find(ProductId).Count++;
                 _appDbContext.Products.Find(ProductId).Average = (_appDbContext.Products.Find(ProductId).Ratings / _appDbContext.Products.Find(ProductId).Count);
